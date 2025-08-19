@@ -1,6 +1,9 @@
 import * as api from './api.js';
+import getCity from "./args.js";
 
-let userCity = 'Almaty';
+let city = await getCity();
 
-const data = await api.getData(userCity);
+console.log(`Получаем погоду для города: ${city}...`);
+
+const data = await api.getData(city);
 console.log(data);
